@@ -1,0 +1,36 @@
+---
+title: "Open Traits Network"
+subtitle: "Trait registry"
+fontsize: 12pt
+geometry: margin=0.5in
+documentclass: scrartcl
+classoption: landscape
+output:
+  word_document:
+    fig_caption: yes
+    fig_width: 6
+  pdf_document:
+    fig_caption: yes
+    fig_crop: no
+    keep_tex: yes
+    template: pretty.template
+  html_document:
+    fig_caption: yes
+    fig_width: 4
+    highlight: null
+    keep_md: yes
+    theme: united
+---
+
+
+\renewcommand{\thetable}{A\arabic{table}}
+
+```{r, echo = FALSE, warning = FALSE}
+options(knitr.table.format = "latex")
+library(kableExtra)
+
+gg <- read.csv("https://docs.google.com/spreadsheets/d/e/2PACX-1vTGsH57fb-H1J-n3kCXrN_h6nCsZDd9TSXqXPxC0VEXZrzCpR0KjhoESJP_2JQHtU9OXRPtRx8e129Q/pub?output=csv", encoding = "UTF-8")
+
+kable(gg)
+```
+
